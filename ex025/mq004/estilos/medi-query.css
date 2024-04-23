@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/*Todas as demais midias*/
+
+/*Typical Device Breakpoints:
+Pequenas telas: até 600px
+Celular: de 600px até 768px
+tablet: 768px ate 992px
+Desktop: 992px até 1200px
+Grandes telas: acima de 1200px
+*/
+@media print{
+    *{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    body{
+        background-image: url(../image/back-print.jpg);
+        text-shadow: none;
+        color: rgb(65, 65, 65);
+    }
+    main{
+        border: 2px solid black;
+    }
+    main>h1{
+        text-decoration: none;
+        color: rgb(65, 65, 65);
+    }
+    img#phone{display: none;}
+    img#tablet{display: none;}
+    img#impressa{display: block;}
+    img#desktop{display: none;}
+    img#tv{display: none;}
+
+    main::after{
+        content: "Essa impressão foi feita atraves do dev Lucca Silva";
+        text-decoration: overline;
+        font-size: 13px;
+        text-align: center;
+        position: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:992px){
+body{
+    background-image: url(../image/back-tablet.jpg);
+}
+img#phone{display: none;}
+img#tablet{display: block;}
+img#impressa{display: none;}
+img#desktop{display: none;}
+img#tv{display: none;}
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+body{
+    background-image: url(../image/back-pc.jpg);
+}
+img#phone{display: none;}
+img#tablet{display: none;}
+img#impressa{display: none;}
+img#desktop{display: block;}
+img#tv{display: none;}
+}
+@media screen and (min-width: 1200px){
+body{
+background-image: url(../image/back-tv.jpg);
+} 
+img#phone{display: none;}
+img#tablet{display: none;}
+img#impressa{display: none;}
+img#desktop{display: none}
+img#tv{display: block;}
+}
